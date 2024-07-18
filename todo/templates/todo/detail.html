@@ -12,22 +12,22 @@
   <body>
     <h1>{{ task.title }}</h1>
     <ul>
-      <li>Posted at: {{ task.posted_at }}</li>
+      <li>課題作成日: {{ task.posted_at }}</li>
       {% if task.due_at %}
-      <li>Due at: {{ task.due_at }}</li>
+      <li>提出期限: {{ task.due_at }}</li>
       {% endif %}
       {% if task.completed %}
-      <li>Status: Completed</li>
+      <li>進捗: 提出済み</li>
       {% else %}
-      <li>Status: Not Completed</li>
+      <li>進捗: 未提出</li>
       {% endif %}
     </ul>
 
     <div>
-      <a href="{% url 'index' %}">Top</a>
-      <a href="{% url 'update' task.id %}">Edit</a>
-      <a href="{% url 'delete' task.id %}">Delete</a>
-      <a href="{% url 'close' task.id %}">Close</a>
+      <a href="{% url 'index' %}">トップへ</a>
+      <a href="{% url 'update' task.id %}">課題を編集</a>
+      <a href="{% url 'delete' task.id %}">課題を削除</a>
+      <a href="{% url 'close' task.id %}">閉じる</a>
     </div>
   </body>
 
