@@ -3,27 +3,28 @@
 <html lang="ja">
 
   <head>
-    <title>To Do Application</title>
+    <title>To Do Application(ToDoアプリ)</title>
     <meta charset="UTF-8">
     <meta name="author" content="INIAD">
     <link rel="stylesheet" type="text/css" href="default.css">
   </head>
 
   <body>
-    <h1>Edit task</h1>
+    <h1>Edit task(タスクを編集)</h1>
     <p>You can edit tasks from the following form.</p>
+    <p>(以下のフォームからタスクを編集できます)</p>
     <form action="{% url 'update' task.id%}" method="post">
       {% csrf_token %}
       <div>
-        <label for="titleInput">Title</label><br>
+        <label for="titleInput">Title(タイトル)</label><br>
         <input id="titleInput" name="title" type="text" placeholder="Input title" value="{{ task.title }}">
       </div>
       <div>
-        <label for="dueInput">Due at:</label><br>
+        <label for="dueInput">Due at(期限):</label><br>
         <input id="dueInput" name="due_at" type="datetime-local" value="{{ task.due_at |date:"Y-m-d H:i" }}">
       </div>
       <div>
-        <button type="submit">Submit</button>
+        <button type="submit">Submit(提出)</button>
       </div>
     </form>
     <br>
